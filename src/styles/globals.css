@@ -1,0 +1,51 @@
+ .body-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  flex-direction: column;
+ }
+
+.main_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: 100vw;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  position: fixed;
+  top: 0;
+  background-color: white;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer > p {
+  font-size: 22px;
+}
+
+.inputBox {
+  width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #424647;
+}
+
+.info-container {
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-container {
+  margin: 15px 0 200px 0;
+}

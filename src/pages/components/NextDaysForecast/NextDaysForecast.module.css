@@ -1,0 +1,24 @@
+.container {
+  font-family: sans-serif;
+}
+
+.weekDatesWeather {
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+  gap: 20px;
+}
+
+.weekOfWeek {
+  display: flex;
+  flex-direction: column;
+}
+
+.weatherContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.weatherInfo {
+  display: flex;
+}
