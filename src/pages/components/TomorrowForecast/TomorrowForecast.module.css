@@ -1,3 +1,79 @@
+.container {
+  width: 1200px;
+  background-color: #F4CE67;
+  border-radius: 20px;
+  padding: 25px;
+  margin-top: 30px;
+}
+
+.tmrForecastTitle {
+  font-size: 16px;
+  margin: 0;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
 .weatherContainer {
   display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.forecastContainer {
+  text-align: center;
+  padding: 0px 40px;
+  border-right: 1px solid darkgray;
+}
+
+.weatherContainer > div:nth-child(6) {
+  border-right: none;
+}
+
+.time {
+  font-family: sans-serif;
+  color: darkcyan;
+}
+
+.weatherImage {
+  border-radius: 15px;
+}
+
+.temperature {
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+}
+
+/* Tablet Size (iPad Air) */
+@media only screen and (max-width: 900px) {
+  .container {
+    width: 650px
+  }
+  .weatherImage {
+    width: 70px;
+    height: 60px;
+  }
+  .forecastContainer {
+    padding: 0px 20px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 320px;
+  }
+  .weatherImage {
+    width: 40px;
+    height: 35px;
+    border-radius: 10px;
+  }
+  .forecastContainer {
+    padding: 0px 10px;
+  }
+  .time {
+    font-size: 10px;
+  }
+  .temperature {
+    font-size: 14px;
+  }
 }

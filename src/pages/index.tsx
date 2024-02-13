@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import axios from "axios";
+import styles from "../styles/Home.module.css"
 import { useState } from "react"; 
 
 //  Components
@@ -28,10 +27,11 @@ export default function Home() {
   };
   
   return (
-    <div className={"body-container"} style={{height : isActiveOne ? "100vh" : "100%" }}>
-      <header className={"header"}>
-        <div className={"logoContainer"}>
-          <Image 
+    <div className={styles.bodyContainer} style={{height : isActiveOne ? "100vh" : "100%" }}>
+      <header className={styles.header}>
+        <div className={styles.logoContainer}>
+          <Image
+            className={styles.logo}
             src='/logo.png'
             width={120}
             height={100}
@@ -41,7 +41,7 @@ export default function Home() {
         </div>
         <div>
           <input 
-            className={"inputBox"}
+            className={styles.inputBox}
             type="text" 
             value={city}
             placeholder="Enter Location" 
@@ -50,16 +50,16 @@ export default function Home() {
           />
         </div>
       </header>
-      <main className={"main_container"} >
-        <div className={"info-container"}>
-          <h1>Check the weather from any cities in the WORLD!</h1>
-          <p>Just enter the city name</p>
-          <p>Then you will see the current weather,tomorrow and 5-Day Forecast of that city!</p>
+      <main className={styles.mainContainer} >
+        <div className={styles.infoContainer}>
+          <h1 className={styles.checkText}>Check the weather from any cities around the WORLD!</h1>
+          <p>Enter the city name</p>
+          <p>You will see the current weather, tomorrow and 5-Day Forecast of that city!</p>
         </div>
-        <div className={"weather-container"} style={{display: isActiveTwo ? 'flex' : 'none'}}>
+        <div className={styles.weatherContainer} style={{display: isActiveTwo ? 'flex' : 'none'}}>
           {
             city && 
-            <div>
+            <div className={styles.weatherInfo}>
               <CurrentWeather passCity={value}/>
               <TomorrowForecast passCity={value}/>
               <NextDaysForecast passCity={value}/>

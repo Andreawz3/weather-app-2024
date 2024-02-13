@@ -26,21 +26,22 @@ export default function TomorrowForecast({passCity}: any) {
   console.log("url", url);
 
   return (
-    <div>
-      <h3>Tomorrow's Forecast</h3>
+    <div className={styles.container}>
+      <h3 className={styles.tmrForecastTitle}>Tomorrow's Forecast</h3>
       <div className={styles.weatherContainer}>
         {
           data && data.slice(0, 6).map((d, index) => {
             return (
-              <div key={index}>
-                <p>{d.dt_txt.slice(11, 16)}</p>
+              <div key={index} className={styles.forecastContainer}>
+                <p className={styles.time}>{d.dt_txt.slice(11, 16)}</p>
                 <Image 
+                  className={styles.weatherImage}
                   src={`/${d.weather[0].main}.png`}
-                  width={150}
-                  height={100}
+                  width={115}
+                  height={90}
                   alt={d.weather[0].main}
                   />
-                <p>{d.main.temp.toFixed(0)}°C</p>
+                <p className={styles.temperature}>{d.main.temp.toFixed(0)}°C</p>
               </div>
             )
           })

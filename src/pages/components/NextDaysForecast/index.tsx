@@ -1,11 +1,10 @@
 import axios from "axios";
 import styles from './NextDaysForecast.module.css'
+import Image from "next/image";
 import { useEffect, useState } from "react"; 
 
 export default function NextDaysForecast({passCity}: any) {
   const [data, setData] = useState<WeekForecast[]>([]);
-  // const [city, setCity] = useState('');
-  const [city, setCity] = useState('Vancouver');
 
   let apiKey = process.env.NEXT_PUBLIC_API;
   const url = `https://api.openweathermap.org/data/2.5/forecast?q=${passCity}&appid=${apiKey}&units=metric`;
@@ -19,9 +18,7 @@ export default function NextDaysForecast({passCity}: any) {
     getData()
 
     .catch(console.error);
-  },[url])
-
-  // console.log("5-day", data);
+  },[url]);
 
   function getWeekDatesStartingFromToday() {
     const currentDate = new Date();
@@ -37,17 +34,16 @@ export default function NextDaysForecast({passCity}: any) {
   }
   
   const weekDates = getWeekDatesStartingFromToday();
-  // console.log(weekDates);
   
   return (
-    <div className={styles.conatiner}>
-      <h3 style={{fontFamily: "sans-serif"}}>5-Day Forecast</h3>
+    <div className={styles.container}>
+      <h3 className={styles.subtitle}>5-Day Forecast</h3>
       <div className={styles.weekDatesWeather}>
         <div className={styles.weekOfWeek}>
           {
             weekDates && weekDates.map((d, index) => {
               return(
-                  <p key={index}>{d.slice(0, 4)}</p>
+                  <p key={index} className={styles.dateWeek}>{d.slice(0, 4)}</p>
               )
             })
           }  
@@ -58,6 +54,13 @@ export default function NextDaysForecast({passCity}: any) {
               return (
                 Number(d.dt_txt.slice(12, 13)) === 0 ? (
                   <div key={index} className={styles.weatherInfo}>
+                    <Image
+                      className={styles.weatherImage}
+                      src={`/${d.weather[0].main}.png`}
+                      width={115}
+                      height={90}
+                      alt={d.weather[0].main}
+                    />
                     <p>{d.main.temp.toFixed(1)}°C</p>
                     <p>{d.weather[0].main}</p>
                     <p>{d.clouds.all}% Chance of Precipation</p>

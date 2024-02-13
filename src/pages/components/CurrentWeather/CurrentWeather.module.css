@@ -1,0 +1,108 @@
+.currentWeatherContainer {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+}
+
+.country {
+  margin: 8px 0 0 0;
+  font-size: 18px;
+}
+
+.update {
+  margin-top: 6px;
+  font-size: 14px;
+  font-family: sans-serif;
+  color: gray;
+}
+
+.currentTemp {
+  font-size: 34px;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.currentWeather {
+  margin: 0;
+  font-family: sans-serif;
+  color: gray;
+}
+
+.airConditionContainer {
+  width: 1200px;
+  padding: 25px;
+  margin-top: 100px;
+  background-color: #F4D06F;
+  border-radius: 20px;
+}
+
+.airConditionText {
+  font-size: 16px;
+  margin: 0;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+.airConditionFeels {
+  color: gray;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.airConditionTemp {
+  font-size: 30px;
+  font-family: sans-serif;
+  margin: 6px 0;
+}
+
+/* Tablet Size (iPad Air) */
+@media only screen and (max-width: 900px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .currentWeatherContainer {
+    width: 90%;
+  }
+  .airConditionContainer {
+    width: 650px;
+  }
+}
+
+/* Mobile Size (iPhone XR) */
+@media only screen and (max-width: 600px) {
+  .airConditionContainer {
+    width: 320px;
+    margin-top: 70px;
+  }
+  .currentWeatherContainer {
+    padding: 0;
+  }
+  .city {
+    font-size: 24px;
+  }
+  .country {
+    font-size: 16px;
+  }
+  .update {
+    font-size: 10px;
+  }
+  .currentTemp {
+    font-size: 24px;
+  }
+  .currentWeather {
+    font-size: 14px;
+  }
+  .airConditionText {
+    font-size: 14px;
+  }
+  .airConditionFeels {
+    font-size: 14px;
+  }
+  .airConditionTemp {
+    font-size: 26px;
+  }
+}
